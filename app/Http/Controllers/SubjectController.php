@@ -19,14 +19,11 @@ class SubjectController extends Controller
     // }
    
     public function view_insert_subject(){
-    
-    	return view('subject.view_insert_subject');
-    }
-	public function get_teacher(){
-    	$get_teacher=Teacher::all();
-    	return view('subject.view_insert_subject',compact('get_teacher'));
+        $get_teacher=Teacher::all();
+    	return view('subject.view_insert_subject',[
+                'get_teacher'=> $get_teacher,
+        ]);    }
 	
-	}
     // public function process_insert_students(Request $rq){
     	
         
