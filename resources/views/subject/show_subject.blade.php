@@ -2,77 +2,41 @@
 @section('content')
 
 {{-- <a href="{{ route('students.view_insert_students') }}">
-	Add	
+	Add
 
 </a> --}}
 
 <table class="table">
 	<tr>
 		<th >Id</th>
-		<th scope="col">Name</th>
-		<th scope="col"> Age</th>
-		<th scope="col">Address</th>
-		<th scope="col">Gender</th>
-		<th scope="col">Phone</th>
-		{{-- <th scope="col">Email</th> --}}
-		<th scope="col">User</th>
-		<th></th>
-		<th></th>
+		<th scope="col">Tên môn học</th>
+		<th scope="col">Thời gian</th>
+		{{-- <th scope="col"> Giáo viên dạy</th> --}}
 
-		{{-- <td></td>
-			<td></td> --}}
+		<th></th>
+		<th></th>
 		</tr>
 
 		<tbody>
 
 
-			@foreach ($array_list as $students)
+			@foreach ($array_list as $subject)
 			<tr>
 				<th >
-					{{$students->id}}
+					{{$subject->id}}
 				</td>
 				<td>
-					{{$students->name}}
-				</td>
-				<td>
-				{{-- @php
-					$age = date_diff(date_create($bdate), date_create('now'))->y;
-					echo $age;
-					@endphp --}}
-					{{ $age = date_diff(date_create($students->date), date_create('now'))->y}}
+					{{$subject->name}}
 				</td>
 
 				<td>
-					{{$students->address}}
-				</td>
-				<td>
-					@php
-					if ($students->gender==1){
-						echo "boy";
-					}else {
-						echo "girl";
-					}
-
-					@endphp
-					
-				</td>
-				<td>
-					{{$students->phone}}
-				</td>
-				<td>
-					{{$students->email}}
-				</td>
-				{{-- <td>
-					{{$students->user}}
-				</td> --}}
-				<td>
-					<a href="{{ route('students.delete',['id' => $students->id]) }}">
+					<a href="{{ route('subject.delete',['id' => $subject->id]) }}">
 						Delete
 					</a>
 				</td>
 
 				<td>
-					<a href="{{ route('students.view_update_students',['id' => $students->id]) }}">
+					<a href="{{ route('subject.view_update_students',['id' => $subject->id]) }}">
 						Update
 					</a>
 				</td>

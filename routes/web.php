@@ -84,7 +84,7 @@ route::group(['middleware' => 'CheckLogin'], function () {
 
 		route::get("", "$controller@show_subject")->name("show_subject");
 		route::get("view_insert_subject", "$controller@view_insert_subject")->name("view_insert_subject");
-		// route::post("process_insert_discipline","$controller@process_insert_discipline")->name("process_insert_discipline");
+		route::post("process_insert_subject", "$controller@process_insert_subject")->name("process_insert_subject");
 		// route::get("delete/{id}","$controller@delete")->name("delete");
 		// route::get("view_update_discipline/{id}","$controller@view_update_discipline")->name("view_update_discipline");
 		// route::post("process_update_discipline/{id}","$controller@process_update_discipline")->name("process_update_discipline");

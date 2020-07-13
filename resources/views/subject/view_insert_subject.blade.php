@@ -6,7 +6,7 @@
 			<strong>Thêm Môn học</strong>
 		</div>
 		<div class="card-body card-block" >
-			<form action="{{ route('students.process_insert_students') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+			<form action="{{ route('subject.process_insert_subject') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
 				@csrf
 
 
@@ -14,9 +14,23 @@
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
 					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
-
-
-				<div class="row form-group">
+					<div class="row form-group">
+					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Thời gian học</label></div>
+					<div class="col-12 col-md-9"><input type="number" id="text-input" name="time" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+				</div>
+              <div class="row form-group">
+                    <div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>
+                    <div class="col-12 col-md-9">
+                        <select name="op_disciline" class="form-control">
+                            @foreach ($get_discipline  as $key => $discipline)
+                                <option value="{{ $key }}">
+                                    {{ $discipline->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+              </div>
+                <div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Giáo viên</label></div>
 					<div class="col-12 col-md-9">
 						<select name="op_disciline" class="form-control">
@@ -30,9 +44,6 @@
 				</div>
 
 
-				{{-- test github destop
-
-				 --}}
 
 
 					<button type="submit" class="btn btn-primary btn-sm" >
