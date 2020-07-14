@@ -79,27 +79,19 @@
                 </div>
                 <div class="login-form">
                     <form method="post">
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" placeholder="Email" readonly="readonly">
                         </div>
-                            <div class="form-group">
+                        <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" class="form-control" placeholder="Password" readonly="readonly">
+                        </div> --}}
+                                
+                        <div class="register-link m-t-15 text-center">
+                            
+                            
                         </div>
-                                <div class="checkbox">
-                           {{--  <label>
-                                <input type="checkbox"> Remember Me
-                            </label> --}}
-                            {{-- <label class="pull-right">
-                                <a href="#">Forgotten Password?</a>
-                            </label> --}}
-
-                                </div>
-                                <div class="register-link m-t-15 text-center">
-                                    
-                                    
-                                </div>
                                 <div class="social-login-content">
                                     <div class="social-button">
                                         {{-- <button type="" class="btn social facebook btn-flat btn-addon mb-3">Sign in Admin</button> --}}

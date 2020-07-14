@@ -1,49 +1,4 @@
-{{-- 
 
-<form action="{{ route('students.process_update_students',['id'=>$students->id]) }}" method="post" accept-charset="utf-8">
-	@csrf
-	
-	name 
-	<input type="text" name="name" value="{{ $students->name }}" readonly="readonly">
-	<br>
-	date
-	<input type="date" name="date" value="{{ $students->date }}">
-	<br>
-	address
-	<input type="text" name="address" value="{{ $students->address }}">
-	<br>
-	phone
-	<input type="text" name="phone" value="{{ $students->phone }}">
-	<br>
-	email
-	<input type="text" name="email" value="{{ $students->email }}">
-	<br>
-	gender:
-		nam <input type="radio" name="gender" value="1" 
-			@php
-				if (($students->gender)==1) {
-					echo "checked";
-				}
-			@endphp
-			/>
-		
-		nu <input type="radio" name="gender" value="0"
-			@php
-				if (($students->gender)==0) {
-					echo "checked";
-				}
-			@endphp
-			/>
-		<br>
-	user
-	<input type="text" name="user" value="{{ $students->user }}" readonly="readonly" >
-	<br>
-	password
-	<input type="password" name="password" value="{{ $students->password }}">
-	<br>
-	<button type="submit">Update</button>
-</form
- --}}
 @extends('layouts.master')
 @section('content')
 	
@@ -52,15 +7,10 @@
 			<strong>Thêm sinh viên</strong> 
 		</div>
 		<div class="card-body card-block" >
-			<form action="{{ route('students.process_update_students',['id'=>$students->id]) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+			<form action="{{ route('subject.process_update_subject',['id'=>$students->id]) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
 				@csrf
 				
-				{{-- <div class="row form-group">
-					<div class="col col-md-3"><label class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9">
-						<p class="form-control-static">name</p>
-					</div>
-				</div> --}}
+				
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
 					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control" value="{{ $students->name }}"><small class="form-text text-muted">This is a help text</small></div>
@@ -77,10 +27,7 @@
 					<div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
 					<div class="col-12 col-md-9"><input type="email" id="email-input" name="email" placeholder="Nhập Email" class="form-control" value="{{ $students->email }}" readonly="readonly"><small class="help-block form-text">Please enter your email</small></div>
 				</div>
-				{{-- <div class="row form-group">
-					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tài khoản</label></div>
-					<div class="col-12 col-md-9"><input type="text" id="text-input" name="user" placeholder="Text" class="form-control" value="{{ $students->user }}" readonly="readonly"><small class="form-text text-muted"></small></div>
-				</div> --}}
+				
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="password-input" class=" form-control-label">Mật khẩu</label></div>
 					<div class="col-12 col-md-9"><input type="password" id="password-input" name="password" placeholder="Password" class="form-control" value="{{ $students->password }}"><small class="help-block form-text">Please enter a complex password</small></div>
@@ -93,7 +40,7 @@
 					<div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Địa chỉ</label></div>
 					<div class="col-12 col-md-9"><textarea name="address" id="textarea-input" rows="9"  class="form-control" value="{{ $students->address }}"></textarea></div>
 				</div> --}}
-				{{-- <div class="row form-group">
+				<div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Select</label></div>
 					<div class="col-12 col-md-9">
 						<select name="select" id="select" class="form-control">
@@ -103,7 +50,7 @@
 							<option value="3">Option #3</option>
 						</select>
 					</div>
-				</div> --}}
+				</div>
 
 
 				{{-- <div class="row form-group">

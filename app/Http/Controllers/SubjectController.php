@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subject;
-use App\Models\Teacher;
 use App\Models\Discipline;
+use App\Models\Teacher;
 use DB;
 use Illuminate\Http\Request;
 
@@ -19,56 +19,57 @@ class SubjectController extends Controller {
 	}
 
 	public function view_insert_subject() {
-		$get_teacher = Teacher::all();
-        $get_discipline = Discipline::all();
-		return view('subject.view_insert_subject', [
-			'get_teacher' => $get_teacher,
-            '$get_discipline' => $get_discipline
-		]);}
+		$teachers = Teacher::get();
+        $disciplines = Discipline::get();
+        // dd($get_discipline,$get_teacher);
+        return view('subject.view_insert_subject', [
+         'teachers' => $teachers,
+         'disciplines' => $disciplines,
+     ]);
 
-	public function process_insert_subject(Request $rq) {
+        // return view('subject.view_insert_subject');
+    }
+    public function process_insert_subject(Request $rq) {
 
-		Subject::create($rq->all());
+      Subject::create($rq->all());
 
-		return redirect()->route('subject.show_subject');
+      return redirect()->route('subject.show_subject');
 
-	}
-	// public function delete($id)
-	// {
+  }
+  public function delete($id)
+  {
 
-	//     Students::find($id)->delete();
-	// 	return redirect()->route('students.show_students');
+   Subject::find($id)->delete();
+   return redirect()->route('subject.show_subject');
 
-	// }
-	// public function view_update_students($id){
+}
+public function view_update_subject($id){
 
-	//     $students= Students::find($id);
-	// 	return view('students.view_update_students',[
-	// 		'students'=> $students,
-	// 	]);
+   $subject= Subject::find($id);
+   $teachers = Teacher::get();
+   $disciplines = Discipline::get();
+   return view('subject.view_update_subject',[
+     'subject'=> $subject,
+     'teachers' => $teachers,
+     'disciplines' => $disciplines,
+ ]);
 
-	// }
-	// public function process_update_students(Request $rq,$id){
-	//     $name    = $rq->name;
-	//     $date    = $rq->date;
-	//     $address = $rq->address;
-	//     $gender  = $rq->gender;
-	//     // $email   = $rq->email;
-	//     $phone   = $rq->phone;
+}
+public function process_update_subject(Request $rq,$id){
+   $name    = $rq->name;
+   $time   = $rq->time;
+   $id_discipline=$rq->id_discipline;
+   $id_teacher=$rq->id_teacher;
+   DB::table('subject')->where('id',$id)->update([
+     'name'=> $name,
+     'time'=> $time,
+     'id_discipline'=> $id_discipline,
+     'id_teacher' => $id_teacher,
 
-	//     $password = $rq->password;
-	// 	DB::table('students')->where('id',$id)->update([
-	// 		'name'=> $name,
-	// 		'date'=> $date,
-	// 		'address'=> $address,
-	// 		'gender'=> $gender,
-	//         // 'email' => $email,
-	//         'phone' => $phone,
 
-	//         'password' => $password,
-	// 	]);
-	//     // SinhVienLop::find($id)->update($rq->all());
+ ]);
+	    // SinhVienLop::find($id)->update($rq->all());
 
-	// 	return redirect()->route('students.show_students');
-	// }
+   return redirect()->route('subject.show_subject');
+}
 }

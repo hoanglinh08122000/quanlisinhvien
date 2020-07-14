@@ -45,7 +45,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Môn học</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('subject.view_insert_subject') }}">Thêm</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Sửa môn</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="{{ route('subject.show_subject') }}">Sửa môn</a></li>
                        </ul>
                 </li>
 
