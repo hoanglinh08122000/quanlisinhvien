@@ -67,7 +67,6 @@ route::group(['middleware' => 'CheckLogin'], function () {
 	// nganh hoc
 	$controller = "DisciplineController";
 	route::group(["prefix" => "discipline", "as" => "discipline."], function () use ($controller) {
-
 		route::get("", "$controller@show_discipline")->name("show_discipline");
 		route::get("view_insert_discipline", "$controller@view_insert_discipline")->name("view_insert_discipline");
 		route::post("process_insert_discipline", "$controller@process_insert_discipline")->name("process_insert_discipline");
@@ -90,4 +89,17 @@ route::group(['middleware' => 'CheckLogin'], function () {
 		route::post("process_update_subject/{id}","$controller@process_update_subject")->name("process_update_subject");
 
 	});
+
+	//lop
+	$controller = "ClassController";
+	route::group(["prefix" => "class", "as" => "class."], function () use ($controller) {
+
+		route::get("", "$controller@show_class")->name("show_class");
+		route::get("view_insert_class", "$controller@view_insert_class")->name("view_insert_class");
+		route::post("process_insert_class", "$controller@process_insert_class")->name("process_insert_class");
+	// 	route::get("delete/{id}","$controller@delete")->name("delete");
+	// 	route::get("view_update_class/{id}","$controller@view_update_class")->name("view_update_class");
+	// 	route::post("process_update_class/{id}","$controller@process_update_class")->name("process_update_class");
+
+	 });
 });

@@ -10,25 +10,24 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller {
 	public function show_subject(Request $rq) {
+        
 		$search = $rq->search;
 		$array_list = Subject::where('name', 'like', "%$search%")->paginate(4);
 		return view('subject.show_subject', [
 			'array_list' => $array_list,
 			'search' => $search,
+           
 		]);
 	}
 
 	public function view_insert_subject() {
 		$teachers = Teacher::get();
         $disciplines = Discipline::get();
-        // dd($get_discipline,$get_teacher);
         return view('subject.view_insert_subject', [
          'teachers' => $teachers,
          'disciplines' => $disciplines,
      ]);
-
-        // return view('subject.view_insert_subject');
-    }
+  }
     public function process_insert_subject(Request $rq) {
 
       Subject::create($rq->all());
@@ -46,12 +45,13 @@ class SubjectController extends Controller {
 public function view_update_subject($id){
 
    $subject= Subject::find($id);
-   $teachers = Teacher::get();
-   $disciplines = Discipline::get();
+   $teachers = Teacher::all();
+   $disciplines = Discipline::all();
    return view('subject.view_update_subject',[
      'subject'=> $subject,
      'teachers' => $teachers,
      'disciplines' => $disciplines,
+    
  ]);
 
 }

@@ -21,4 +21,9 @@ class Teacher extends Model
 
         $this->attributes['password'] = Hash::make($password);
     }
+    public function Subject()
+    {
+        return $this->hasMany('App\Models\Subject', 'id_teacher', 'id');
+    }
+
 }

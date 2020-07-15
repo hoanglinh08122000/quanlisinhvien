@@ -10,4 +10,8 @@ class Discipline extends Model
    protected $primaryKey = 'id'; 
    protected $fillable = ['name'];  
    public $timestamps = false; 
+   public function Subject()
+    {
+        return $this->hasMany('App\Models\Subject', 'id_discipline', 'id');
+    }
 }

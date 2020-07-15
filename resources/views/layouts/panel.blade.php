@@ -37,7 +37,7 @@
                 </li><li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Lớp</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Thêm </a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.view_insert_class') }}">Thêm </a></li>
                         <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Sửa tên lớp</a></li>
                        </ul>
                 </li>
