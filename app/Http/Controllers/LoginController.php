@@ -23,7 +23,8 @@ class LoginController extends Controller
        $student = Students::where('email',$rq->email)->first(); 
         if (isset($student) && Hash::check($rq->password, $student->password)){
     		Session::put('id',$student->id);
-    		Session::put('name',$student->name);
+    		Session::put('last_name',$student->last_name);
+            Session::put('first_name',$student->first_name);
             Session::put('level',$student->level);
 
     		
@@ -39,12 +40,13 @@ class LoginController extends Controller
         return view('login.login_admin');
     }
     public function process_login_admin(Request $rq){
-       $student = Admin::where('email',$rq->email)->first();
+       $admin = Admin::where('email',$rq->email)->first();
         
-        if (isset($student) && Hash::check($rq->password, $student->password)){
-            Session::put('id',$student->id);
-            Session::put('name',$student->name);
-            Session::put('level',$student->level);
+        if (isset($admin) && Hash::check($rq->password, $admin->password)){
+            Session::put('id',$admin->id);
+            Session::put('last_name',$admin->first_name);
+            Session::put('last_name',$admin->last_name);
+            Session::put('level',$admin->level);
 
           
             return redirect()->route('index');
@@ -64,7 +66,8 @@ class LoginController extends Controller
 
         if (isset($teacher) && Hash::check($rq->password, $teacher->password)){
             Session::put('id',$teacher->id);
-            Session::put('name',$teacher->name);
+            Session::put('first_name',$teacher->first_name);
+            Session::put('last_name',$teacher->last_name);
             Session::put('level',$teacher->level);
 
             

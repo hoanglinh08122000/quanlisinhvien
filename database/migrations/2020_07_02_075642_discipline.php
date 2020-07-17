@@ -16,6 +16,7 @@ class Discipline extends Migration
        Schema::create('discipline', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',50)->unique();
+            $table->string('name_collapse',50);
     });
    }
 

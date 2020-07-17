@@ -46,8 +46,10 @@ class DisciplineController extends Controller
     }
     public function process_update_discipline(Request $rq,$id){
         $name    = $rq->name;
+        $name_collapse = $rq->name_collapse;
         DB::table('discipline')->where('id',$id)->update([
     		'name'=> $name,
+            'name_collapse'=> $name_collapse,
     	]);
         // SinhVienLop::find($id)->update($rq->all());
        

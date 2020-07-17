@@ -20,12 +20,24 @@
 				</div>
               
                 <div class="row form-group">
-					<div class="col col-md-3"><label for="select" class=" form-control-label">Giáo viên</label></div>
+					<div class="col col-md-3"><label for="select" class=" form-control-label">Khoá</label></div>
 					<div class="col-12 col-md-9">
 						<select name="id_course" class="form-control">
 							@foreach ($courses  as $course)
 							    <option value="{{ $course->id}}">
 							    	{{ $course->name }}
+							    </option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col col-md-3"><label for="select" class=" form-control-label"></label></div>
+					<div class="col-12 col-md-9">
+						<select name="id_course" class="form-control">
+							@foreach ($courses  as $course)
+							    <option value="{{ $course->id }}">
+							    	{{ $course->name_collapse }}
 							    </option>
 							@endforeach
 						</select>
@@ -43,10 +55,18 @@
 						</select>
 					</div>
 				</div>
-
-
-
-
+				<div class="row form-group">
+					<div class="col col-md-3"><label for="select" class=" form-control-label"></label></div>
+					<div class="col-12 col-md-9">
+						<select name="id_discipline" class="form-control">
+							@foreach ($disciplines  as $discipline)
+							    <option value="{{ $discipline->id }}">
+							    	{{ $discipline->name_collapse }}
+							    </option>
+							@endforeach
+						</select>
+					</div>
+				</div>
 					<button type="submit" class="btn btn-primary btn-sm" >
 						<i class="fa fa-dot-circle-o"></i> Submit
 					</button>

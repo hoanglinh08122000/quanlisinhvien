@@ -15,7 +15,8 @@ class Students extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50);
+            $table->string('first_name',50);
+            $table->string('last_name',50);
             $table->date('date');
             $table->integer('level');
             $table->text('address');

@@ -33,7 +33,7 @@ class CourseController extends Controller
 
 
         Course::find($id)->delete();
-    	return redirect()->route('course.show_Course');
+    	return redirect()->route('course.show_course');
 
     }
     public function view_update_course($id){
@@ -46,8 +46,10 @@ class CourseController extends Controller
     }
     public function process_update_Course(Request $rq,$id){
         $name    = $rq->name;
+        $name_collapse= $rq->name_collapse;
         DB::table('course')->where('id',$id)->update([
     		'name'=> $name,
+            'name_collapse'=> $name_collapse,
     	]);
         // SinhVienLop::find($id)->update($rq->all());
        

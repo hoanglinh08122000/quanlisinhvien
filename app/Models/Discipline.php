@@ -8,7 +8,7 @@ class Discipline extends Model
 {
    protected $table = 'discipline';
    protected $primaryKey = 'id'; 
-   protected $fillable = ['name'];  
+   protected $fillable = ['name','name_collapse'];  
    public $timestamps = false; 
    public function Subject()
     {

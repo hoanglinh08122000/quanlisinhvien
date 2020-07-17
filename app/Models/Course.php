@@ -8,6 +8,6 @@ class Course extends Model
 {
    protected $table = 'course';
    protected $primaryKey = 'id'; 
-   protected $fillable = ['name'];  
+   protected $fillable = ['name','name_collapse'];  
    public $timestamps = false; 
 }

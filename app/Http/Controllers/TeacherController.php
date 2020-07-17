@@ -10,7 +10,7 @@ class TeacherController extends Controller
 {
     public function show_teacher(Request $rq){
         $search = $rq->search;
-    	$array_list = Teacher::where('name','like',"%$search%")->paginate(4);
+    	$array_list = Teacher::where('last_name','like',"%$search%")->paginate(4);
         return view('teacher.show_teacher',[
          'array_list'=> $array_list,
          'search'=> $search
@@ -45,7 +45,8 @@ class TeacherController extends Controller
 
     }
     public function process_update_teacher(Request $rq,$id){
-        $name    = $rq->name;
+        $first_name    = $rq->first_name;
+        $last_name    = $rq->last_name;
         $date    = $rq->date;
         $address = $rq->address;
         $gender  = $rq->gender;
@@ -54,7 +55,8 @@ class TeacherController extends Controller
         
         $password = $rq->password;
     	DB::table('teacher')->where('id',$id)->update([
-    		'name'=> $name,
+    		'first_name'=> $first_name,
+            'last_name'=> $last_name,
     		'date'=> $date,
     		'address'=> $address,
     		'gender'=> $gender,

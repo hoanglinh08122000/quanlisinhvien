@@ -108,7 +108,7 @@
                         
                     </a>
 
-                    <span  style="color: black">{{ Session::get('name') }}</span>
+                    <span  style="color: black">{{ Session::get('last_name') }}</span>
                        {{--  <div class="dropdown-menu" aria-labelledby="language">
 
                             <div class="dropdown-item">

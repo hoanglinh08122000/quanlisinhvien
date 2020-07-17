@@ -15,7 +15,8 @@ class Admin extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50);
+            $table->string('first_name',50);
+            $table->string('last_name',50);
             $table->date('date');
             $table->integer('level');
             $table->text('address');

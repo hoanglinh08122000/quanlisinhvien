@@ -10,15 +10,14 @@
 			<form action="{{ route('teacher.process_update_teacher',['id'=>$teacher->id]) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
 				@csrf
 				
-				{{-- <div class="row form-group">
-					<div class="col col-md-3"><label class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9">
-						<p class="form-control-static">name</p>
-					</div>
-				</div> --}}
+				
 				<div class="row form-group">
+					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Họ</label></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="first_name" placeholder="Text" class="form-control" value="{{ $teacher->first_name }}"><small class="form-text text-muted">This is a help text</small></div>
+				</div>
+					<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control" value="{{ $teacher->name }}"><small class="form-text text-muted">This is a help text</small></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="last_name" placeholder="Text" class="form-control" value="{{ $teacher->last_name }}"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Ngày sinh</label></div>

@@ -27,16 +27,17 @@
 							@foreach ($teachers as $teacher)
 								@if ($teacher->id == $subject->id_teacher )
 									<option value="{{ $teacher->id}}" selected>
-								    	{{ $teacher->name }}
+								    	{{ $teacher->full_name }}
 								    </option>
 								@else 
 									<option value="{{ $teacher->id}}" >
-								    	{{ $teacher->name }}
+								    	{{ $teacher->full_name }}
 								    </option>
 								@endif
 							@endforeach
 						</select>
 					</div>
+					
 				</div>
 				{{-- <div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>

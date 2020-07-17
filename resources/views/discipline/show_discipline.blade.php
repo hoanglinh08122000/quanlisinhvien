@@ -23,6 +23,9 @@
 				{{$discipline->name}}
 			</td>
 			<td>
+				{{$discipline->name_collapse}}
+			</td>
+			<td>
 				<a href="{{ route('discipline.delete',['id' => $discipline->id]) }}">
 					Delete
 				</a>

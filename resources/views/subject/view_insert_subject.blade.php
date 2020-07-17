@@ -36,7 +36,7 @@
 						<select name="id_teacher" class="form-control">
 							@foreach ($teachers  as $teacher)
 							    <option value="{{ $teacher->id}}">
-							    	{{ $teacher->name }}
+							    	{{ $teacher->full_name }}
 							    </option>
 							@endforeach
 						</select>
@@ -53,6 +53,7 @@
 							@endforeach
 						</select>
 					</div>
+					
 				</div>
 
 

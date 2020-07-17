@@ -9,7 +9,9 @@
 <table class="table">
 	<tr>
 		<th >Id</th>
-		<th>Name</th>
+		<th>Tên</th>
+		<th>Tên rút gọn</th>
+
 		<th></th>
 		<th></th>
 	</tr>
@@ -21,6 +23,9 @@
 			</td>
 			<td>
 				{{$course->name}}
+			</td>
+			<td>
+				{{$course->name_collapse}}
 			</td>
 			<td>
 				<a href="{{ route('course.delete',['id' => $course->id]) }}">
