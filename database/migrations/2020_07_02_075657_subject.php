@@ -18,9 +18,10 @@ class Subject extends Migration
             $table->string('name',50)->unique();
             $table->string('time',50);
             $table->integer('id_discipline')->unsigned();
-            $table->integer('id_teacher')->unsigned();
+            
             $table->foreign('id_discipline')->references('id')->on('discipline');
-            $table->foreign('id_teacher')->references('id')->on('teacher');
+            
+            $table->integer('status');
             });
     }
 

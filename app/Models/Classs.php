@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Class extends Model
+class Classs extends Model
 {
     protected $table = 'class';
 	protected $primaryKey = 'id';
@@ -21,4 +21,9 @@ class Class extends Model
     {
     	return $this->belongsTo('App\Models\Course', 'id_course');
     }
+
+    public function getFullNameAttribute()
+        {
+            return "{$this->Discipline->name_collapse}{$this->name}{$this->Course->name_collapse}";
+        }
 }

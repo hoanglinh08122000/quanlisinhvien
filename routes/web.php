@@ -94,12 +94,26 @@ route::group(['middleware' => 'CheckLogin'], function () {
 	$controller = "ClassController";
 	route::group(["prefix" => "class", "as" => "class."], function () use ($controller) {
 
-		route::get("", "$controller@show_class")->name("show_class");
+		route::get("index_class", "$controller@index_class")->name("index_class");
 		route::get("view_insert_class", "$controller@view_insert_class")->name("view_insert_class");
-		route::post("process_insert_class", "$controller@process_insert_class")->name("process_insert_class");
-	// 	route::get("delete/{id}","$controller@delete")->name("delete");
-	// 	route::get("view_update_class/{id}","$controller@view_update_class")->name("view_update_class");
-	// 	route::post("process_update_class/{id}","$controller@process_update_class")->name("process_update_class");
 
-	 });
+		route::post("process_insert_class", "$controller@process_insert_class")->name("process_insert_class");
+		route::get("delete/{id}","$controller@delete")->name("delete");
+		route::get("show_edit", "$controller@show_edit")->name("show_edit");
+		route::get("view_update_class/{id}","$controller@view_update_class")->name("view_update_class");
+		route::post("process_update_class/{id}","$controller@process_update_class")->name("process_update_class");
+	});
+	// phân công
+	// $controller = "AssignmentController";
+	// route::group(["prefix" => "assignment", "as" => "assignment."], function () use ($controller) {
+
+	// 	// route::get("", "$controller@show_subject")->name("show_subject");
+	// 	route::get("assignment_teacher", "$controller@assignment_teacher")->name("assignment_teacher");
+	// 	route::get("assignment_class", "$controller@assignment_class")->name("assignment_class");
+		
+	// 	// route::get("delete/{id}","$controller@delete")->name("delete");
+	// 	// route::get("view_update_subject/{id}","$controller@view_update_subject")->name("view_update_subject");
+	// 	// route::post("process_update_subject/{id}","$controller@process_update_subject")->name("process_update_subject");
+	// });
+	//  
 });

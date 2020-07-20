@@ -18,29 +18,11 @@
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Thời gian học</label></div>
 					<div class="col-12 col-md-9"><input type="number" id="text-input" name="time" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
-              {{-- <div class="row form-group">
-                    <div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>
-                    <div class="col-12 col-md-9">
-                        <select name="op_disciline" class="form-control">
-                            @foreach ($get_discipline  as $key => $discipline)
-                                <option value="{{ $key }}">
-                                    {{ $discipline->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-              </div> --}}
-                <div class="row form-group">
-					<div class="col col-md-3"><label for="select" class=" form-control-label">Giáo viên</label></div>
-					<div class="col-12 col-md-9">
-						<select name="id_teacher" class="form-control">
-							@foreach ($teachers  as $teacher)
-							    <option value="{{ $teacher->id}}">
-							    	{{ $teacher->full_name }}
-							    </option>
-							@endforeach
-						</select>
-					</div>
+             
+                
+					<div class="row form-group">
+					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tình trạng</label></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="status" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>

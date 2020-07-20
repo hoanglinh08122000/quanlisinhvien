@@ -12,12 +12,10 @@
 
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small>
+					</div>
 				</div>
-					<div class="row form-group">
-					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Thời gian học</label></div>
-					<div class="col-12 col-md-9"><input type="number" id="text-input" name="time" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
-				</div>
+				
               
                 <div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Khoá</label></div>
@@ -31,18 +29,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="row form-group">
-					<div class="col col-md-3"><label for="select" class=" form-control-label"></label></div>
-					<div class="col-12 col-md-9">
-						<select name="id_course" class="form-control">
-							@foreach ($courses  as $course)
-							    <option value="{{ $course->id }}">
-							    	{{ $course->name_collapse }}
-							    </option>
-							@endforeach
-						</select>
-					</div>
-				</div>
+				
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>
 					<div class="col-12 col-md-9">
@@ -55,18 +42,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="row form-group">
-					<div class="col col-md-3"><label for="select" class=" form-control-label"></label></div>
-					<div class="col-12 col-md-9">
-						<select name="id_discipline" class="form-control">
-							@foreach ($disciplines  as $discipline)
-							    <option value="{{ $discipline->id }}">
-							    	{{ $discipline->name_collapse }}
-							    </option>
-							@endforeach
-						</select>
-					</div>
-				</div>
+
 					<button type="submit" class="btn btn-primary btn-sm" >
 						<i class="fa fa-dot-circle-o"></i> Submit
 					</button>

@@ -12,7 +12,7 @@ class SubjectController extends Controller {
 	public function show_subject(Request $rq) {
         
 		$search = $rq->search;
-		$array_list = Subject::where('name', 'like', "%$search%")->paginate(4);
+		$array_list = Subject::where('name', 'like', "%$search%")->paginate(10);
 		return view('subject.show_subject', [
 			'array_list' => $array_list,
 			'search' => $search,

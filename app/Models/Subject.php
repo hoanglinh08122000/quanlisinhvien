@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model {
 	protected $table = 'subject';
 	protected $primaryKey = 'id';
-	protected $fillable = ['name', 'time','id_discipline','id_teacher'];
+	protected $fillable = ['name', 'time','status','id_discipline'];
 	
 
 	public $timestamps = false;

@@ -37,8 +37,9 @@
                 </li><li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Lớp</a>
                     <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.index_class') }}">Xem </a></li>
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.view_insert_class') }}">Thêm </a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Sửa tên lớp</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="{{ route('class.show_edit') }}">Sửa lớp</a></li>
                        </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
@@ -65,10 +66,15 @@
                         
                     </ul>
                 </li>
-
+                
+                 
                
-                 <li class="">
+                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Phân công</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a href="">Phân công theo giáo viên</a></li>
+                        <li><i class="fa fa-table"></i><a href="tables-data.html">Phân công theo lớp</a></li>
+                    </ul>
                     
                 </li>
                 
