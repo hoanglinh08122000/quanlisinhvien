@@ -8,9 +8,18 @@ use App\Models\Teacher;
 
 class TeacherController extends Controller
 {
+    public function index_teacher(Request $rq){
+        $search = $rq->search;
+        $array_list = Teacher::where('last_name','like',"%$search%")->paginate(10);
+        return view('teacher.index_teacher',[
+         'array_list'=> $array_list,
+         'search'=> $search
+        ]);
+
+    }
     public function show_teacher(Request $rq){
         $search = $rq->search;
-    	$array_list = Teacher::where('last_name','like',"%$search%")->paginate(4);
+    	$array_list = Teacher::where('last_name','like',"%$search%")->paginate(10);
         return view('teacher.show_teacher',[
          'array_list'=> $array_list,
          'search'=> $search

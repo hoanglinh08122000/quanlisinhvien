@@ -9,6 +9,17 @@ use DB;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller {
+
+  public function index_subject(Request $rq) {
+        
+    $search = $rq->search;
+    $array_list = Subject::where('name', 'like', "%$search%")->paginate(10);
+    return view('subject.index_subject', [
+      'array_list' => $array_list,
+      'search' => $search,
+           
+    ]);
+  }
 	public function show_subject(Request $rq) {
         
 		$search = $rq->search;

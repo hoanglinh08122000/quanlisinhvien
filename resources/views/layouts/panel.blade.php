@@ -18,17 +18,20 @@
                         <a href="{{ route('index') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                 </li>
-                <h3 class="menu-title">cập nhật</h3><!-- /.menu-title -->
+                <h3 class="menu-title">Cập nhật</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-calendar"></i>Khóa học</a>
                     <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('course.index_course') }}">Xem </a></li>
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('course.view_insert_course') }}">Thêm </a></li>
                         <li><i class="fa fa-id-badge"></i><a href="{{ route('course.show_course') }}">Sửa Khóa học</a></li>
                        </ul>
                 </li>
+
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bookmark"></i>Ngành học</a>
                     <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('discipline.index_discipline') }}">Xem </a></li>
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('discipline.view_insert_discipline') }}">Thêm </a></li>
                         <li><i class="fa fa-id-badge"></i><a href="{{ route('discipline.show_discipline') }}">Sửa tên Ngành</a></li>
                     </ul>
@@ -45,6 +48,7 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Môn học</a>
                     <ul class="sub-menu children dropdown-menu">
+                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('subject.index_subject') }}">Xem</a></li>
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('subject.view_insert_subject') }}">Thêm</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="{{ route('subject.show_subject') }}">Sửa môn</a></li>
                        </ul>
@@ -53,9 +57,9 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-female "></i>Giáo viên</a>
                     <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-bars"></i><a href="{{ route('teacher.index_teacher') }}">Xem</a></li>
                         <li><i class="fa fa-bars"></i><a href="{{ route('teacher.view_insert_teacher') }}">Thêm</a></li>
                         <li><i class="fa fa-share-square-o"></i><a href="{{ route('teacher.show_teacher') }}">Sửa thông tin</a></li>
-                        
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
@@ -70,10 +74,10 @@
                  
                
                  <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Phân công</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-puzzle-piece"></i>Phân công</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="">Phân công theo giáo viên</a></li>
-                        <li><i class="fa fa-table"></i><a href="tables-data.html">Phân công theo lớp</a></li>
+                        <li><i class="fa fa-table"></i><a href="">Theo giáo viên</a></li>
+                        <li><i class="fa fa-table"></i><a href="tables-data.html">Theo lớp</a></li>
                     </ul>
                     
                 </li>

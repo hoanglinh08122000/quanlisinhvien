@@ -10,9 +10,12 @@ class Students extends Model
     protected $table = 'students'; // kết nối bảng lớp
     protected $primaryKey = 'id'; // đổi khóa chính thành id
 
-    protected $fillable = ['name','date','level','address','phone','email','gender','password']; //khai báo cột cần 
+    protected $fillable = ['first_name','last_name','date','level','address','phone','email','gender','password']; //khai báo cột cần 
 
-   
+    public function getFullNameAttribute()
+        {
+            return "{$this->first_name}{$this->last_name}";
+        }
     protected $attributes = [
         'level' => 3,
     ];

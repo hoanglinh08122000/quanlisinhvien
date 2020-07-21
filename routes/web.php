@@ -41,7 +41,8 @@ route::group(['middleware' => 'CheckLogin'], function () {
 	// giao vien
 	$controller = "TeacherController";
 	route::group(["prefix" => "teacher", "as" => "teacher."], function () use ($controller) {
-
+		
+		route::get("index_teacher", "$controller@index_teacher")->name("index_teacher");
 		route::get("", "$controller@show_teacher")->name("show_teacher");
 		route::get("view_insert_teacher", "$controller@view_insert_teacher")->name("view_insert_teacher");
 		route::post("process_insert_teacher", "$controller@process_insert_teacher")->name("process_insert_teacher");
@@ -55,6 +56,7 @@ route::group(['middleware' => 'CheckLogin'], function () {
 	$controller = "CourseController";
 	route::group(["prefix" => "course", "as" => "course."], function () use ($controller) {
 
+		route::get("index_course", "$controller@index_course")->name("index_course");
 		route::get("", "$controller@show_course")->name("show_course");
 		route::get("view_insert_course", "$controller@view_insert_course")->name("view_insert_course");
 		route::post("process_insert_course", "$controller@process_insert_course")->name("process_insert_course");
@@ -66,13 +68,14 @@ route::group(['middleware' => 'CheckLogin'], function () {
 
 	// nganh hoc
 	$controller = "DisciplineController";
-	route::group(["prefix" => "discipline", "as" => "discipline."], function () use ($controller) {
-		route::get("", "$controller@show_discipline")->name("show_discipline");
-		route::get("view_insert_discipline", "$controller@view_insert_discipline")->name("view_insert_discipline");
-		route::post("process_insert_discipline", "$controller@process_insert_discipline")->name("process_insert_discipline");
-		route::get("delete/{id}", "$controller@delete")->name("delete");
-		route::get("view_update_discipline/{id}", "$controller@view_update_discipline")->name("view_update_discipline");
-		route::post("process_update_discipline/{id}", "$controller@process_update_discipline")->name("process_update_discipline");
+	route::group(["prefix" => "discipline", "as" => "discipline."], function () use ($controller){
+			route::get("index_discipline", "$controller@index_discipline")->name("index_discipline");
+			route::get("", "$controller@show_discipline")->name("show_discipline");
+			route::get("view_insert_discipline", "$controller@view_insert_discipline")->name("view_insert_discipline");
+			route::post("process_insert_discipline", "$controller@process_insert_discipline")->name("process_insert_discipline");
+			route::get("delete/{id}", "$controller@delete")->name("delete");
+			route::get("view_update_discipline/{id}", "$controller@view_update_discipline")->name("view_update_discipline");
+			route::post("process_update_discipline/{id}", "$controller@process_update_discipline")->name("process_update_discipline");
 
 	});
 
@@ -81,6 +84,7 @@ route::group(['middleware' => 'CheckLogin'], function () {
 	$controller = "SubjectController";
 	route::group(["prefix" => "subject", "as" => "subject."], function () use ($controller) {
 
+		route::get("index_subject", "$controller@index_subject")->name("index_subject");
 		route::get("", "$controller@show_subject")->name("show_subject");
 		route::get("view_insert_subject", "$controller@view_insert_subject")->name("view_insert_subject");
 		route::post("process_insert_subject", "$controller@process_insert_subject")->name("process_insert_subject");

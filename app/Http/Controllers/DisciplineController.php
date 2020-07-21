@@ -8,6 +8,15 @@ use App\Models\Discipline;
 
 class DisciplineController extends Controller
 {
+    public function index_discipline(Request $rq){
+        $search = $rq->search;
+        $array_list = Discipline::where('name','like',"%$search%")->paginate(10);
+        return view('discipline.index_discipline',[
+         'array_list'=> $array_list,
+         'search'=> $search
+        ]);
+
+    }
    public function show_discipline(Request $rq){
         $search = $rq->search;
     	$array_list = Discipline::where('name','like',"%$search%")->paginate(10);
