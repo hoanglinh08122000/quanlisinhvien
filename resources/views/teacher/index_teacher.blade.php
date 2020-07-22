@@ -9,18 +9,17 @@
 <table class="table">
 	<tr>
 		<th >Id</th>
-		<th scope="col">Name</th>
-		<th scope="col"> Age</th>
-		<th scope="col">Address</th>
-		<th scope="col">Gender</th>
-		<th scope="col">Phone</th>
-		{{-- <th scope="col">Email</th> --}}
-		<th scope="col">User</th>
+		<th scope="col" style="text-align: center;">Tên</th>
+		<th scope="col" style="text-align: center;"> Tuổi</th>
+		<th scope="col" style="text-align: center;">Địa chỉ</th>
+		<th scope="col" style="text-align: center;">Giới tính</th>
+		<th scope="col" style="text-align: center;">Điện thoại</th>
+		
+		<th scope="col" style="text-align: center;">Email</th>
 		<th></th>
 		<th></th>
 
-		{{-- <td></td>
-			<td></td> --}}
+		
 		</tr>
 
 		<tbody>
@@ -35,10 +34,7 @@
 					{{$students->full_name}}
 				</td>
 				<td>
-				{{-- @php
-					$age = date_diff(date_create($bdate), date_create('now'))->y;
-					echo $age;
-					@endphp --}}
+				
 					{{ $age = date_diff(date_create($students->date), date_create('now'))->y}}
 				</td>
 
@@ -62,20 +58,8 @@
 				<td>
 					{{$students->email}}
 				</td>
-				{{-- <td>
-					{{$students->user}}
-				</td> --}}
-				<td>
-					<a href="{{ route('students.delete',['id' => $students->id]) }}">
-						Delete
-					</a>
-				</td>
-
-				<td>
-					<a href="{{ route('students.view_update_students',['id' => $students->id]) }}">
-						Update
-					</a>
-				</td>
+				
+				
 
 			</tr>
 

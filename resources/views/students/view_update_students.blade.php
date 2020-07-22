@@ -1,49 +1,4 @@
-{{-- 
 
-<form action="{{ route('students.process_update_students',['id'=>$students->id]) }}" method="post" accept-charset="utf-8">
-	@csrf
-	
-	name 
-	<input type="text" name="name" value="{{ $students->name }}" readonly="readonly">
-	<br>
-	date
-	<input type="date" name="date" value="{{ $students->date }}">
-	<br>
-	address
-	<input type="text" name="address" value="{{ $students->address }}">
-	<br>
-	phone
-	<input type="text" name="phone" value="{{ $students->phone }}">
-	<br>
-	email
-	<input type="text" name="email" value="{{ $students->email }}">
-	<br>
-	gender:
-		nam <input type="radio" name="gender" value="1" 
-			@php
-				if (($students->gender)==1) {
-					echo "checked";
-				}
-			@endphp
-			/>
-		
-		nu <input type="radio" name="gender" value="0"
-			@php
-				if (($students->gender)==0) {
-					echo "checked";
-				}
-			@endphp
-			/>
-		<br>
-	user
-	<input type="text" name="user" value="{{ $students->user }}" readonly="readonly" >
-	<br>
-	password
-	<input type="password" name="password" value="{{ $students->password }}">
-	<br>
-	<button type="submit">Update</button>
-</form
- --}}
 @extends('layouts.master')
 @section('content')
 	
@@ -62,8 +17,12 @@
 					</div>
 				</div> --}}
 				<div class="row form-group">
+					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Họ</label></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control" value="{{ $students->first_name }}"><small class="form-text text-muted">This is a help text</small></div>
+				</div>
+				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control" value="{{ $students->name }}"><small class="form-text text-muted">This is a help text</small></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control" value="{{ $students->last_name }}"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Ngày sinh</label></div>

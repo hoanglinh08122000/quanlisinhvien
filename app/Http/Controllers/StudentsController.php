@@ -10,7 +10,7 @@ class StudentsController extends Controller
 {
 	public function show_students(Request $rq){
         $search = $rq->search;
-    	$array_list = Students::where('name','like',"%$search%")->paginate(4);
+    	$array_list = Students::where('last_name','like',"%$search%")->paginate(15);
         return view('Students.show_students',[
          'array_list'=> $array_list,
          'search'=> $search

@@ -7,8 +7,8 @@
 	<tr>
 		<th >Id</th>
 		<th>Name</th>
-		<th></th>
-		<th></th>
+		<th>Tiêu đề</th>
+		
 	</tr>
 	<tbody>
 	@foreach ($array_list as $discipline)
@@ -22,18 +22,7 @@
 			<td>
 				{{$discipline->name_collapse}}
 			</td>
-			<td>
-				<a href="{{ route('discipline.delete',['id' => $discipline->id]) }}">
-					Delete
-				</a>
-			</td>
-
-			<td>
-				<a href="{{ route('discipline.view_update_discipline',['id' => $discipline->id]) }}">
-					Update
-				</a>
-			</td>
-
+			
 		</tr>
 	@endforeach
 	<br>

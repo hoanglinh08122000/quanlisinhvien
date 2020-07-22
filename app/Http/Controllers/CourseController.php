@@ -8,6 +8,15 @@ use App\Models\Course;
 
 class CourseController extends Controller
 {
+    public function index_course(Request $rq){
+        $search = $rq->search;
+        $array_list = Course::where('name','like',"%$search%")->paginate(10);
+        return view('course.index_course',[
+         'array_list'=> $array_list,
+         'search'=> $search
+        ]);
+
+    }
     public function show_course(Request $rq){
         $search = $rq->search;
     	$array_list = Course::where('name','like',"%$search%")->paginate(10);

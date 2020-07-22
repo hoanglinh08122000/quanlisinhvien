@@ -16,8 +16,12 @@
 					</div>
 				</div> --}}
 				<div class="row form-group">
+					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Họ</label></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="first_name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+				</div>
+				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên</label></div>
-					<div class="col-12 col-md-9"><input type="text" id="text-input" name="name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
+					<div class="col-12 col-md-9"><input type="text" id="text-input" name="last_name" placeholder="Text" class="form-control"><small class="form-text text-muted">This is a help text</small></div>
 				</div>
 				<div class="row form-group">
 					<div class="col col-md-3"><label for="text-input" class=" form-control-label">Ngày sinh</label></div>

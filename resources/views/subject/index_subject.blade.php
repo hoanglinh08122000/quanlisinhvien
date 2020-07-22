@@ -5,7 +5,7 @@
 		<th >Id</th>
 		<th scope="col">Tên môn học</th>
 		<th scope="col">Thời gian(buổi)</th>
-		<th scope="col">Giáo viên</th>
+		
 		<th scope="col">Ngành</th>
 		<th></th>
 		<th></th>
@@ -22,25 +22,12 @@
 			<td>
 				{{$subject->time}} 
 			</td>
-			<td>
-				{{ $subject->teacher->name }}
-			 	
-			</td>
+			
 			<td>
 				{{ $subject->discipline	->name }}
 			 	
 			</td>
-			<td>
-				<a href="{{ route('subject.delete',['id' => $subject->id]) }}">
-					Delete
-				</a>
-			</td>
-
-			<td>
-				<a href="{{ route('subject.view_update_subject',['id' => $subject->id]) }}">
-					Update
-				</a>
-			</td>
+			
 
 		</tr>
 
