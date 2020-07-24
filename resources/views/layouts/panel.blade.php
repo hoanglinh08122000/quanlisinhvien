@@ -41,6 +41,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Lớp</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.index_class') }}">Xem </a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.view_insert_class_under_student') }}">Thêm kèm chia</a></li>
                         <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('class.view_insert_class') }}">Thêm </a></li>
                         <li><i class="fa fa-id-badge"></i><a href="{{ route('class.show_edit') }}">Sửa lớp</a></li>
                        </ul>
@@ -76,7 +77,7 @@
                  <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-puzzle-piece"></i>Phân công</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="">Theo giáo viên</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{ route('assignment.assignment_teacher') }}">Theo giáo viên</a></li>
                         <li><i class="fa fa-table"></i><a href="tables-data.html">Theo lớp</a></li>
                     </ul>
                     

@@ -31,6 +31,15 @@ class ClassController extends Controller
 			'disciplines' => $disciplines,
 		]);
 	}
+
+	public function view_insert_class_under_student() {
+		$courses = Course::get();
+		$disciplines = Discipline::get();
+		return view('class.view_insert_class_under_student', [
+			'courses' => $courses,
+			'disciplines' => $disciplines,
+		]);
+	}
 	public function process_insert_class(Request $rq) {
 
 		Classs::create($rq->all());
