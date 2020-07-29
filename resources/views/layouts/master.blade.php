@@ -96,6 +96,8 @@
             });
         })(jQuery);
     </script>
+    <script src="{{ asset('public/js/jquery2.js') }}"></script>
+    @stack('js');
 
 </body>
 
