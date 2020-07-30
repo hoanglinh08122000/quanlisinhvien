@@ -15,7 +15,7 @@ class Subject extends Migration
     {   
          Schema::create('subject', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50)->unique();
+            $table->string('name',50);
             $table->string('time',50);
             $table->integer('id_discipline')->unsigned();
             

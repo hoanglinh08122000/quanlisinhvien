@@ -120,5 +120,13 @@ route::group(['middleware' => 'CheckLogin'], function () {
 		// route::get("view_update_subject/{id}","$controller@view_update_subject")->name("view_update_subject");
 		// route::post("process_update_subject/{id}","$controller@process_update_subject")->name("process_update_subject");
 	});
+	//ajax
+	$controller = "AjaxController";
+	route::group(["prefix" => "ajax", "as" => "ajax."], function () use ($controller) {
+
+		
+		route::get("subject/{id_discipline}", "$controller@subject")->name("subject");
+		
+	});
 	 
 });

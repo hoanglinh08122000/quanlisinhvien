@@ -22,9 +22,10 @@
 
 			</div>
 			<div class="row form-group">
-				<div class="col col-md-3"><label for="select" class=" form-control-label">Ngành</label></div>
+				<div class="col col-md-3"><label for="select" class=" form-control-label" >Ngành</label></div>
 				<div class="col-12 col-md-9">
-					<select name="id" class="form-control">
+					<select name="id" class="form-control" id="select_discipline">
+						<option>Chọn ngành</option>
 						@foreach ($disciplines  as $discipline)
 						<option value="{{ $discipline->id }}">
 							{{ $discipline->name }}
@@ -52,7 +53,7 @@
 			<div class="row form-group">
 				<div class="col col-md-3"><label for="select" class=" form-control-label">Môn</label></div>
 				<div class="col-12 col-md-9">
-					<select name="id" class="form-control">
+					<select name="id" class="form-control" id="ajax_subject>
 						@foreach ($subjects  as $subject)
 						<option value="{{ $subject->id }}">
 							{{ $subject->name }}
@@ -69,7 +70,7 @@
 					<select name="id" class="form-control">
 						@foreach ($teachers  as $teacher)
 						<option value="{{ $teacher->id }}">
-							{{ $teacher->name }}
+							{{ $teacher->full_name }}
 						</option>
 						@endforeach
 					</select>
@@ -96,4 +97,20 @@
 	</div>
 	
 
+	@endsection
+
+	@section('script')
+		<script>
+			$(document).ready(function(){
+				
+				$("#select_discipline").change(function() {
+					// var id_discipline= $(this).val();
+					// $.get("ajax/subject/"+id_discipline,function(data){
+					// 	$("#ajax_subject").html(data);
+					
+
+					});	
+				});
+			// });
+		</script>
 	@endsection

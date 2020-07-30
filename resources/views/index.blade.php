@@ -412,7 +412,7 @@
 							});
 						})(jQuery);
 					</script>
-
+					@yield('script')
 				</body>
 
 				</html>

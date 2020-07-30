@@ -78,6 +78,7 @@
     <script src="{{ asset('public/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('public/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('public/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.js') }}"></script>
     <script>
         (function($) {
             "use strict";
@@ -96,7 +97,7 @@
             });
         })(jQuery);
     </script>
-
+    @yield('script')
 </body>
 
 </html>
