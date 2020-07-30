@@ -25,7 +25,12 @@
 				<div class="col col-md-3"><label for="select" class=" form-control-label" >Ngành</label></div>
 				<div class="col-12 col-md-9">
 					<select name="id" class="form-control" id="select_discipline">
+<<<<<<< HEAD
 						<option>Chọn ngành</option>
+=======
+						<option disabled selected> Chon nganh</option>}
+						
+>>>>>>> master
 						@foreach ($disciplines  as $discipline)
 						<option value="{{ $discipline->id }}">
 							{{ $discipline->name }}
@@ -50,7 +55,7 @@
 
 			</div>
 
-			<div class="row form-group">
+			{{-- <div class="row form-group">
 				<div class="col col-md-3"><label for="select" class=" form-control-label">Môn</label></div>
 				<div class="col-12 col-md-9">
 					<select name="id" class="form-control" id="ajax_subject>
@@ -59,6 +64,16 @@
 							{{ $subject->name }}
 						</option>
 						@endforeach
+					</select>
+				</div>
+
+			</div> --}}
+
+			<div class="row form-group">
+				<div class="col col-md-3"><label for="select" class=" form-control-label">Môn</label></div>
+				<div class="col-12 col-md-9">
+					<select name="id" class="form-control" id="select_subject">
+						
 					</select>
 				</div>
 
@@ -99,6 +114,7 @@
 
 	@endsection
 
+<<<<<<< HEAD
 	@section('script')
 		<script>
 			$(document).ready(function(){
@@ -114,3 +130,37 @@
 			// });
 		</script>
 	@endsection
+=======
+	@push('js')
+		<script>
+			 $(document).ready(function() {
+			 	$("#select_discipline").change(function(){
+			 		var id = $(this).val();
+			 		$("#select_subject").html('');
+			 		$.ajax({
+			 			url: '{{ route('ajax.assignment_teacher') }}',
+			 			type: 'GET',
+			 			dataType: 'json',
+			 			data: {id : id},
+			 		})
+			 		.done(function(response) {
+			 			$(response).each(function()
+			 			{
+			 				
+			 				$("#select_subject").append(`
+			 					<option value='${this.id}'>
+									${this.name}
+			 					</option>`)
+			 			})
+			 		})
+			 		.fail(function() { 
+			 			alert("sai roi")
+			 		})
+			 		
+			 		
+			 		
+			 	})
+			 });
+		</script>
+	@endpush
+>>>>>>> master

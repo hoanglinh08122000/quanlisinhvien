@@ -129,4 +129,17 @@ route::group(['middleware' => 'CheckLogin'], function () {
 		
 	});
 	 
+	//ajax
+	$controller = "AjaxController";
+	route::group(["prefix" => "ajax", "as" => "ajax."], function () use ($controller) {
+
+		route::get("assignment_teacher", "$controller@assignment_teacher")->name("assignment_teacher");
+		// route::get("view_insert_class_under_student", "$controller@view_insert_class_under_student")->name("view_insert_class_under_student");
+
+		// route::post("process_insert_class", "$controller@process_insert_class")->name("process_insert_class");
+		// route::get("delete/{id}","$controller@delete")->name("delete");
+		// route::get("show_edit", "$controller@show_edit")->name("show_edit");
+		// route::get("view_update_class/{id}","$controller@view_update_class")->name("view_update_class");
+		// route::post("process_update_class/{id}","$controller@process_update_class")->name("process_update_class");
+	});
 });

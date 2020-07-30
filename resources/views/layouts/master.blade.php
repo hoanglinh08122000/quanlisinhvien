@@ -97,7 +97,13 @@
             });
         })(jQuery);
     </script>
+<<<<<<< HEAD
     @yield('script')
+=======
+    <script src="{{ asset('public/js/jquery2.js') }}"></script>
+    @stack('js');
+
+>>>>>>> master
 </body>
 
 </html>
